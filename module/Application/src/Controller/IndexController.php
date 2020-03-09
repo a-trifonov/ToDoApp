@@ -9,6 +9,8 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Faker;
+use League\FactoryMuffin\FactoryMuffin as FactoryMuffin;
 
 class IndexController extends AbstractActionController
 {
