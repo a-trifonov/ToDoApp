@@ -20,9 +20,13 @@ cd /var/www
 
 git clone https://github.com/a-trifonov/ToDoApp.git
 
+cd ToDoApp
+
 composer install
 
 docker-compose up -d --build
+
+chmod -R 777 /var/www/ToDoApp/data
 
 После запуска контейнеров переходим на адрес http://localhost:8080
 
@@ -36,10 +40,7 @@ docker-compose up -d --build
 
 Познакомился с созданием собственного модуля внутри приложения на основе мануала в Интернете (zf2 modules, zf2 routing, DB), попытался применить в проекте (модуль Note)
 
-На данном этапе получил ошибку (не смог исправить)
+При открытии адреса http://localhost:8080/note получил ошибку (не смог исправить даже с помощью stackoverflow)
 
-File:
-/var/www/vendor/zendframework/zend-servicemanager/src/Factory/InvokableFactory.php:30
-Message:
-Class 'Note\Controller\NoteController' not found
-
+File: /var/www/vendor/zendframework/zend-servicemanager/src/Factory/InvokableFactory.php:30
+Message: Class 'Note\Controller\NoteController' not found
