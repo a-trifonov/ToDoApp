@@ -5,3 +5,16 @@ zf:
    - "8080:80"
   volumes:
    - .:/var/www
+mysql:
+  image: mysql:5.7
+  container_name: todoapp-mysql
+  working_dir: /var/www/ToDoApp
+  environment:
+   - MYSQL_ROOT_PASSWORD=123321
+   - MYSQL_DATABASE=trifonov_app
+   - MYSQL_USER=trifonov
+   - MYSQL_PASSWORD=trifonov
+  volumes:
+   - ./data:/docker-entrypoint-initdb.d
+  ports:
+   - "9002:3306"
